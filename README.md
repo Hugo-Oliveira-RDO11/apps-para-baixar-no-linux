@@ -7,4 +7,3 @@
  *inspirado em um [video](https://www.youtube.com/watch?v=vBfj5dNZOSA&t=38s) do diolinux*
 
  # Programas!!
-1. 

@@ -29,11 +29,9 @@ cd /home/$USER/Downloads/apps-para-baixar-no-linux
 
 sudo add-apt-repository ppa:alexlarsson/flatpak ; ppa:obsproject/obs-studio ; ppa:otto-kesselgulasch/gimp ; ppa:audacity-team/daily ; ppa:thomas-schiex/blender ; ppa:inkscape.dev/stable ; ppa:stebbins/handbrake-releases ; ppa:kdenlive/kdenlive-stable ; ppa:lutris-team/lutris -y
 
-##flatpak remote-add --if-not-exists flathub https://flathub.org/repo/flathub.flatpakrepo
-
 sudo apt-get update
 
-sudao apt-get flatpak ; obs-studio ; gimp ; audacity ; blender ; inkscape ; handbrake-gtk ; kdenlive ; lutris -y
+sudo apt-get flatpak ; obs-studio ; gimp ; audacity ; blender ; inkscape ; handbrake-gtk ; kdenlive ; lutris -y
 
 sudo apt update
 
@@ -58,9 +56,9 @@ wget -c https://repo.steampowered.com/steam/archive/precise/steam_latest.deb
 sudo dpkg -i *.deb -y
 
 
-sudo dpkg --add-architecture i386 -y
+sudo dpkg --add-architecture i386 
 wget -nc https://dl.winehq.org/wine-builds/winehq.key 
-sudo apt-key add winehq.key -y
+sudo apt-key add winehq.key 
 sudo add-apt-repository 'deb https://dl.winehq.org/wine-builds/ubuntu/ focal main' -y
 sudo apt update
 sudo apt install --install-recommends winehq-stable -y

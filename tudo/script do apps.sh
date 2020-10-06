@@ -31,7 +31,7 @@ sudo add-apt-repository ppa:alexlarsson/flatpak ; ppa:obsproject/obs-studio ; pp
 
 sudo apt-get update
 
-sudo apt-get flatpak ; obs-studio ; gimp ; audacity ; blender ; inkscape ; handbrake-gtk ; kdenlive ; lutris -y
+sudo apt-get flatpak ; obs-studio ; gimp ; audacity ; blender ; inkscape ; handbrake-gtk ; kdenlive ; lutris ; spotify
 
 sudo apt update
 
@@ -52,6 +52,8 @@ wget -c https://dl.google.com/linux/direct/google-chrome-stable_current_amd64.de
 wegt -c https://download.virtualbox.org/virtualbox/6.1.14/virtualbox-6.1_6.1.14-140239~Ubuntu~eoan_amd64.deb 
 
 wget -c https://repo.steampowered.com/steam/archive/precise/steam_latest.deb 
+
+wget -c https://dl.discordapp.net/apps/linux/0.0.12/discord-0.0.12.deb
 
 sudo dpkg -i *.deb -y
 

@@ -26,13 +26,18 @@ sudo apt install gnome-tweak-tool -y
 
 cd /home/$USER/Downloads/apps-para-baixar-no-linux
 
-sudo add-apt-repository ppa:alexlarsson/flatpak ; ppa:obsproject/obs-studio ; ppa:otto-kesselgulasch/gimp ; ppa:audacity-team/daily ; ppa:thomas-schiex/blender ; ppa:inkscape.dev/stable ; ppa:stebbins/handbrake-releases ; ppa:kdenlive/kdenlive-stable ; ppa:lutris-team/lutris -y
+sudo add-apt-repository ppa:alexlarsson/flatpak ; ppa:obsproject/obs-studio ; ppa:otto-kesselgulasch/gimp ; ppa:audacity-team/daily ; ppa:thomas-schiex/blender ; ppa:inkscape.dev/stable ; ppa:stebbins/handbrake-releases ; ppa:kdenlive/kdenlive-stable ; ppa:lutris-team/lutris sudo apt-add-repository ppa:paolorotolo/android-studio
 
 sudo apt-get update
 
-sudo apt-get flatpak ; obs-studio ; gimp ; audacity ; blender ; inkscape ; handbrake-gtk ; kdenlive ;  lutris -y
+sudo apt-get flatpak ; obs-studio ; gimp ; audacity ; blender ; inkscape ; handbrake-gtk ; kdenlive ;  lutris ; android-studio -y
 
 sudo apt update
+
+sudo apt install gnome-software-plugin-flatpak
+
+flatpak remote-add --if-not-exists flathub https://flathub.org/repo/flathub.flatpakrepo
+
 
 sudo snap install sublime-text --classic -y
 
@@ -43,8 +48,6 @@ sudo snap install keepassxc ; vlc ; natron ; homeserver ; spotify -y
 cd /home/$USER/Downloads/apps-para-baixar-no-linux/arquivos-deb
 
 wget -c https://az764295.vo.msecnd.net/stable/2af051012b66169dde0c4dfae3f5ef48f787ff69/code_1.49.3-1601661857_amd64.deb ;
-
-wget -c https://r1---sn-up4p8xcg-cnce.gvt1.com/edgedl/android/studio/ide-zips/4.0.1.0/android-studio-ide-193.6626763-linux.tar.gz?cms_redirect=yes&mh=Ft&mip=177.66.167.12&mm=28&mn=sn-up4p8xcg-cnce&ms=nvh&mt=1601946677&mv=m&mvi=1&pcm2cms=yes&pl=24&shardbypass=yes ;
 
 wget -c https://dl.google.com/linux/direct/google-chrome-stable_current_amd64.deb ;
 
@@ -63,3 +66,13 @@ sudo apt-key add winehq.key
 sudo add-apt-repository 'deb https://dl.winehq.org/wine-builds/ubuntu/ focal main' -y
 sudo apt update
 sudo apt install --install-recommends winehq-stable -y
+
+sudo rm -Rf /opt/playonlinux* -y
+sudo rm -Rf /usr/bin/playonlinux -y
+sudo rm -Rf /usr/share/applications/playonlinux.desktop -y
+
+wget -q "http://deb.playonlinux.com/public.gpg" -O- | sudo apt-key add -
+sudo wget http://deb.playonlinux.com/playonlinux_cosmic.list -O /etc/apt/sources.list.d/playonlinux.list
+sudo apt-get update
+sudo apt-get install playonlinux
+

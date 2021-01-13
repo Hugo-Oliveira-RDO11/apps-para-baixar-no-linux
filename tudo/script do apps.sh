@@ -13,7 +13,7 @@ cd /home/$USER/Downloads/apps-para-baixar-no-linux
 
 ## configurando o asdf!
 
-sudo apt install git curl -y
+sudo apt install build-essential git automake autoconf libreadline-dev libncurses-dev libssl-dev libyaml-dev libxslt-dev libffi-dev libtool unixodbc-dev unzip curl zlib1g-dev sqlite3 libsqlite3-dev
 
 git clone https://github.com/asdf-vm/asdf.git ~/.asdf --branch v0.8.0
 echo "$HOME/.asdf/asdf.sh" >> ~/.bashrc

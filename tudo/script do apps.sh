@@ -56,18 +56,20 @@ echo "deb https://download.mono-project.com/repo/ubuntu stable-focal main" | sud
 sudo apt update
 sudo apt install mono-devel -y
 
-sudo add-apt-repository ; ppa:otto-kesselgulasch/gimp ;  ppa:thomas-schiex/blender ; ppa:inkscape.dev/stable ; ppa:kdenlive/kdenlive-stable ; ppa:lutris-team/lutris -y
+sudo add-apt-repository ; ppa:otto-kesselgulasch/gimp ;  ppa:thomas-schiex/blender ; ppa:inkscape.dev/stable ; ppa:kdenlive/kdenlive-stable ; ppa:lutris-team/lutris ; ppa:a-v-shkop/chromium-dev -y
 
 sudo apt-get update
 
-sudo apt snapd; gimp ; blender ; inkscape  ; lutris -y
+sudo apt snapd; gimp ; blender ; inkscape  ; lutris ; chromium-browser -y
 
 sudo apt update
 
-sudo snap install keepassxc ; vlc ; spotify ; code --classic -y
+sudo snap install keepassxc ; vlc ; spotify ; code --classic ; flutter --classic ; android-studio --classic -y
 
+cd /home/$USER/Downloads/apps-para-baixar-no-linux/arquivos-tar
 
+wget https://pt.wordpress.org/latest-pt_PT.tar.gz -o wordpress.tar.gz
 
+wget https://downloadsapachefriends.global.ssl.fastly.net/8.0.0/xampp-linux-x64-8.0.0-3-installer.run?from_af=true -o xampp.run
 
-
-cd /home/$USER/Downloads/apps-para-baixar-no-linux/arquivos-deb
+wget https://public-cdn.cloud.unity3d.com/hub/prod/UnityHub.AppImage -o unity3d.AppImage

@@ -4,7 +4,7 @@
 
 ##tirando travas!
 
-## sudo rm /var/lib/dpkg/lock-frontend ; sudo rm /var/cache/apt/archives/lock ; 
+sudo rm /var/lib/dpkg/lock-frontend ; sudo rm /var/cache/apt/archives/lock ; 
 
 sudo apt update
 
@@ -66,9 +66,13 @@ sudo apt update
 
 sudo snap install keepassxc ; vlc ; spotify ; code --classic ; flutter --classic ; android-studio --classic -y
 
+mkdir arquivos-tar appsimagens
+
 cd /home/$USER/Downloads/apps-para-baixar-no-linux/arquivos-tar
 
 wget https://pt.wordpress.org/latest-pt_PT.tar.gz -o wordpress.tar.gz
+
+cd /home/$USER/Downloads/apps-para-baixar-no-linux/appsimagens
 
 wget https://downloadsapachefriends.global.ssl.fastly.net/8.0.0/xampp-linux-x64-8.0.0-3-installer.run?from_af=true -o xampp.run
 

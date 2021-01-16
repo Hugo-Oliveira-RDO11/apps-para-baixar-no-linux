@@ -8,30 +8,13 @@ sudo rm /var/lib/dpkg/lock-frontend ; sudo rm /var/cache/apt/archives/lock ;
 
 sudo apt update
 
-mkdir /home/$USER/Downloads/apps-para-baixar-no-linux/
-cd /home/$USER/Downloads/apps-para-baixar-no-linux
-
 ## configurando o asdf!
 
-sudo apt install build-essential git automake autoconf libreadline-dev libncurses-dev libssl-dev libyaml-dev libxslt-dev libffi-dev libtool unixodbc-dev unzip curl zlib1g-dev sqlite3 libsqlite3-dev
+sudo apt install build-essential git automake autoconf libreadline-dev libncurses-dev libssl-dev libyaml-dev libxslt-dev libffi-dev libtool unixodbc-dev unzip curl zlib1g-dev sqlite3 libsqlite3-dev openjdk-8-jdk apache2 mysql-server php libapache2-mod-php php-mysql
 
-git clone https://github.com/asdf-vm/asdf.git ~/.asdf --branch v0.8.0
-echo "$HOME/.asdf/asdf.sh" >> ~/.bashrc
-echo "$HOME/.asdf/completions/asdf.bash" >> ~/.bashrc
+##falta
+##configurar o mysql, o flutter, e configurar o asdf
 
-asdf plugin-add nodejs https://github.com/asdf-vm/asdf-nodejs.git
-asdf install nodejs 14.15.4 ; asdf install nodejs 15.5.1 
-
-asdf plugin-add ruby https://github.com/asdf-vm/asdf-ruby.git
-asdf install ruby 2.7.2
-
-asdf plugin-add java https://github.com/halcyon/asdf-java.git
-
-## terminado!
-
-cd /home/$USER/Downloads/apps-para-baixar-no-linux
-
-## baixando o dotnet!
 
 ##chaves do dotnet
 
@@ -54,26 +37,54 @@ sudo apt install gnupg ca-certificates
 sudo apt-key adv --keyserver hkp://keyserver.ubuntu.com:80 --recv-keys 3FA7E0328081BFF6A14DA29AA6A19B38D3D831EF
 echo "deb https://download.mono-project.com/repo/ubuntu stable-focal main" | sudo tee /etc/apt/sources.list.d/mono-official-stable.list
 sudo apt update
-sudo apt install mono-devel -y
+sudo apt install mono-devel -y;
 
-sudo add-apt-repository ; ppa:otto-kesselgulasch/gimp ;  ppa:thomas-schiex/blender ; ppa:inkscape.dev/stable ; ppa:kdenlive/kdenlive-stable ; ppa:lutris-team/lutris ; ppa:a-v-shkop/chromium-dev -y
+##adicionando repositorios
 
-sudo apt-get update
+sudo add-apt-repository ppa:otto-kesselgulasch/gimp -y;
+sudo add-apt-repository ppa:thomas-schiex/blender -y;
+sudo add-apt-repository ppa:inkscape.dev/stable -y;
+sudo add-apt-repository ppa:kdenlive/kdenlive-stable -y;
+sudo add-apt-repository ppa:lutris-team/lutris -y;
+sudo add-apt-repository ppa:a-v-shkop/chromium-dev -y;
 
-sudo apt snapd; gimp ; blender ; inkscape  ; lutris ; chromium-browser -y
+sudo apt-get update;
+
+##parte dos apps baixados por apt
+
+sudo apt install snapd -y;
+sudo apt install gimp -y;
+sudo apt install blender -y;
+sudo apt install inkscape -y;
+sudo apt install lutris -y;
+sudo apt install chromium-browser -y ;
 
 sudo apt update
 
-sudo snap install keepassxc ; vlc ; spotify ; code --classic ; flutter --classic ; android-studio --classic -y
+##parte dos apps baixados por snap
 
-mkdir arquivos-tar appsimagens
+sudo snap install keepassxc ;
+sudo snap install vlc ;
+sudo snap install spotify ;
+sudo snap install code --classic -y;
+sudo snap install flutter --classic ;
+sudo snap install android-studio --classic ;
+sudo snap install postman ;
 
-cd /home/$USER/Downloads/apps-para-baixar-no-linux/arquivos-tar
+#talvez para o vscode(extensões!)
 
-wget https://pt.wordpress.org/latest-pt_PT.tar.gz -o wordpress.tar.gz
 
-cd /home/$USER/Downloads/apps-para-baixar-no-linux/appsimagens
+##parte para o flutter!
 
-wget https://downloadsapachefriends.global.ssl.fastly.net/8.0.0/xampp-linux-x64-8.0.0-3-installer.run?from_af=true -o xampp.run
 
-wget https://public-cdn.cloud.unity3d.com/hub/prod/UnityHub.AppImage -o unity3d.AppImage
+
+git clone https://github.com/asdf-vm/asdf.git ~/.asdf --branch v0.8.0
+echo -e "$HOME/.asdf/asdf.sh" >> ~/.bashrc
+echo -e "$HOME/.asdf/completions/asdf.bash" >> ~/.bashrc
+source ~/.bashrc
+
+asdf plugin-add nodejs https://github.com/asdf-vm/asdf-nodejs.git
+asdf plugin-add ruby https://github.com/asdf-vm/asdf-ruby.git
+
+asdf install nodejs 14.15.4
+asdf install ruby 3.0.0

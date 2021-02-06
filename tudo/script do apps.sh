@@ -10,7 +10,7 @@ sudo apt update
 
 ## configurando o asdf!
 
-sudo apt install build-essential git automake autoconf libreadline-dev libncurses-dev libssl-dev libyaml-dev libxslt-dev libffi-dev libtool unixodbc-dev unzip curl zlib1g-dev sqlite3 libsqlite3-dev openjdk-8-jdk apache2 mysql-server php libapache2-mod-php php-mysql
+sudo apt install build-essential git automake autoconf libreadline-dev libncurses-dev libssl-dev libyaml-dev libxslt-dev libffi-dev libtool unixodbc-dev unzip curl zlib1g-dev libsqlite3-dev apache2 mysql-server php libapache2-mod-php php-mysql
 
 ##falta
 ##configurar o mysql, o flutter, e configurar o asdf
@@ -83,8 +83,32 @@ echo -e "$HOME/.asdf/asdf.sh" >> ~/.bashrc
 echo -e "$HOME/.asdf/completions/asdf.bash" >> ~/.bashrc
 source ~/.bashrc
 
-asdf plugin-add nodejs https://github.com/asdf-vm/asdf-nodejs.git
-asdf plugin-add ruby https://github.com/asdf-vm/asdf-ruby.git
+asdf plugin-add nodejs https://github.com/asdf-vm/asdf-nodejs.git;
+asdf plugin-add ruby https://github.com/asdf-vm/asdf-ruby.git;
+asdf plugin-add java https://github.com/halcyon/asdf-java.git;
+asdf plugin-add golang https://github.com/kennyp/asdf-golang.git;
+asdf plugin-add erlang https://github.com/asdf-vm/asdf-erlang.git;
+asdf plugin-add elixir https://github.com/asdf-vm/asdf-elixir.git;
+asdf plugin-add kotlin https://github.com/asdf-community/asdf-kotlin.git;
+asdf plugin-add rust https://github.com/code-lever/asdf-rust.git;
 
-asdf install nodejs 14.15.4
-asdf install ruby 3.0.0
+asdf update;
+
+asdf plugin update --all;
+##instalando o java 8 e a mais nova
+asdf install java openjdk-16 && asdf global java openjdk-16;
+asdf install java adoptopenjdk-8.0.262+10;
+
+asdf install nodejs 14.15.4 && asdf global nodejs 14.15.4;
+
+asdf install ruby 3.0.0 && asdf global ruby 3.0.0;
+
+asdf install erlang 23.2.4 && asdf global erlang 23.2.4;
+
+asdf install golang 1.15.8 && asdf global golang 1.15.8;
+
+asdf install elixir 1.11.3 && asdf global elixir 1.11.3;
+
+asdf install kotlin 1.4.30 && asdf global kotlin 1.4.30;
+
+asdf install rust 1.49.0 && asdf global rust 1.49.0;

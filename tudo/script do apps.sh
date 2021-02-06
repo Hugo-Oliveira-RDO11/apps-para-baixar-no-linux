@@ -6,11 +6,12 @@
 
 sudo rm /var/lib/dpkg/lock-frontend ; sudo rm /var/cache/apt/archives/lock ; 
 
-sudo apt update
+sudo apt update;
+sudo apt upgrade -y;
 
 ## configurando o asdf!
 
-sudo apt install build-essential git automake autoconf libreadline-dev libncurses-dev libssl-dev libyaml-dev libxslt-dev libffi-dev libtool unixodbc-dev unzip curl zlib1g-dev libsqlite3-dev apache2 mysql-server php libapache2-mod-php php-mysql
+sudo apt install build-essential git automake autoconf libreadline-dev libncurses-dev libssl-dev libyaml-dev libxslt-dev libffi-dev libtool unixodbc-dev unzip curl zlib1g-dev libsqlite3-dev apache2 mysql-server php libapache2-mod-php php-mysql apt-transport-https ca-certificates   curl gnupg-agent software-properties-common;
 
 ##falta
 ##configurar o mysql, o flutter, e configurar o asdf
@@ -39,6 +40,14 @@ echo "deb https://download.mono-project.com/repo/ubuntu stable-focal main" | sud
 sudo apt update
 sudo apt install mono-devel -y;
 
+##removendo os aplicativos que eu irei baixar!(caso vc tenha)
+sudo apt-get remove docker docker-engine docker.io containerd runc
+
+##baixando as chaves!
+
+wget -O - https://dbeaver.io/debs/dbeaver.gpg.key | sudo apt-key add -
+curl -fsSL https://download.docker.com/linux/ubuntu/gpg | sudo apt-key add -
+
 ##adicionando repositorios
 
 sudo add-apt-repository ppa:otto-kesselgulasch/gimp -y;
@@ -47,6 +56,8 @@ sudo add-apt-repository ppa:inkscape.dev/stable -y;
 sudo add-apt-repository ppa:kdenlive/kdenlive-stable -y;
 sudo add-apt-repository ppa:lutris-team/lutris -y;
 sudo add-apt-repository ppa:a-v-shkop/chromium-dev -y;
+echo "deb https://dbeaver.io/debs/dbeaver-ce /" | sudo tee /etc/apt/sources.list.d/dbeaver.list;
+
 
 sudo apt-get update;
 
@@ -58,6 +69,11 @@ sudo apt install blender -y;
 sudo apt install inkscape -y;
 sudo apt install lutris -y;
 sudo apt install chromium-browser -y ;
+sudo apt install vim -y ;
+sudo apt install tmux -y;
+sudo apt install tilix -y;
+sudo apt install dbeaver-ce;
+sudo apt install docker-ce docker-ce-cli containerd.io;
 
 sudo apt update
 
@@ -112,3 +128,6 @@ asdf install elixir 1.11.3 && asdf global elixir 1.11.3;
 asdf install kotlin 1.4.30 && asdf global kotlin 1.4.30;
 
 asdf install rust 1.49.0 && asdf global rust 1.49.0;
+
+sudo usermod -aG docker $USER;
+sudo reboot
